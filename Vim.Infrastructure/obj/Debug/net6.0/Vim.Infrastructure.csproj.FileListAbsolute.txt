@@ -1,0 +1,15 @@
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\bin\Debug\net6.0\Vim.Infrastructure.deps.json
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\bin\Debug\net6.0\Vim.Infrastructure.dll
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\bin\Debug\net6.0\Vim.Infrastructure.pdb
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\bin\Debug\net6.0\Vim.Core.dll
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\bin\Debug\net6.0\Vim.Core.pdb
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\obj\Debug\net6.0\Vim.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\obj\Debug\net6.0\Vim.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\obj\Debug\net6.0\Vim.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\obj\Debug\net6.0\Vim.Infrastructure.AssemblyInfo.cs
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\obj\Debug\net6.0\Vim.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\obj\Debug\net6.0\Vim.Infrastructure.csproj.CopyComplete
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\obj\Debug\net6.0\Vim.Infrastructure.dll
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\obj\Debug\net6.0\refint\Vim.Infrastructure.dll
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\obj\Debug\net6.0\Vim.Infrastructure.pdb
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\obj\Debug\net6.0\ref\Vim.Infrastructure.dll

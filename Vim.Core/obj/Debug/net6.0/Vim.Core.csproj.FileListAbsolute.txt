@@ -1,0 +1,12 @@
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\bin\Debug\net6.0\Vim.Core.deps.json
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\bin\Debug\net6.0\Vim.Core.dll
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\bin\Debug\net6.0\Vim.Core.pdb
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\obj\Debug\net6.0\Vim.Core.csproj.AssemblyReference.cache
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\obj\Debug\net6.0\Vim.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\obj\Debug\net6.0\Vim.Core.AssemblyInfoInputs.cache
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\obj\Debug\net6.0\Vim.Core.AssemblyInfo.cs
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\obj\Debug\net6.0\Vim.Core.csproj.CoreCompileInputs.cache
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\obj\Debug\net6.0\Vim.Core.dll
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\obj\Debug\net6.0\refint\Vim.Core.dll
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\obj\Debug\net6.0\Vim.Core.pdb
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\obj\Debug\net6.0\ref\Vim.Core.dll
