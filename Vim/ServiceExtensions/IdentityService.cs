@@ -4,8 +4,10 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Vim.Core.Application.Interfaces;
 using Vim.Core.Entities;
+using Vim.Infrastructure;
 using Vim.Infrastructure.Data;
 using Vim.Infrastructure.Repositories;
+using Vim.Services;
 
 namespace Vim.ServiceExtensions
 {
@@ -32,6 +34,8 @@ namespace Vim.ServiceExtensions
             service.AddScoped<IMaterialsRepository, MaterialsRepository>();
             service.AddScoped<IStaffRepository, StaffRepository>();
             service.AddScoped<IStudentRepository, StudentRepository>();
+            service.AddScoped<ITokenService, TokenService>();
+            service.AddScoped<AccountService>();
             return service;
         }
     }

@@ -91,6 +91,11 @@ namespace Vim.Services
 
         }
 
+        public async Task Logout()
+        {
+            await _signinManager.SignOutAsync();
+        }
+
         public async Task<bool> AssignRoleToUserAsync(UserRoleDto roleDto)
         {
             bool isAssigned = false;
