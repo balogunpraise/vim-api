@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Vim.Core.Application.Interfaces;
 using Vim.Core.Entities;
 using Vim.Dtos;
 
@@ -11,13 +12,15 @@ namespace Vim.Services
         private readonly SignInManager<ApplicationUser> _signinManager;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly ITokenService _tokenService;
 
-        public AccountService(IConfiguration config, SignInManager<ApplicationUser> signinManager, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
+        public AccountService(IConfiguration config, SignInManager<ApplicationUser> signinManager, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, ITokenService tokenService)
         {
             _config = config;
             _signinManager = signinManager;
             _userManager = userManager;
             _roleManager = roleManager;
+            _tokenService = tokenService;
         }
 
         public async Task<bool> CreateRoleAsync(IdentityRole role)
@@ -27,12 +30,12 @@ namespace Vim.Services
             return res.Succeeded || isRoleCreated;
         } 
 
-        public async Task<List<ApplicationRole>> GetRolesAsync()
+        public async Task<List<RoleDto>> GetRolesAsync()
         {
-            List<ApplicationRole> roles = new List<ApplicationRole>();
+            List<RoleDto> roles = new List<RoleDto>();
             roles = (from r in await _roleManager.Roles.ToListAsync()
-                     select new ApplicationRole()
-                     { 
+                     select new RoleDto()
+                     {
                          Name = r.Name,
                          NormalizedName = r.NormalizedName
                      }).ToList();
@@ -51,6 +54,41 @@ namespace Vim.Services
             };
             var result = await _userManager.CreateAsync(register, registerUser.Password);
             return result.Succeeded || isCreated;
+        }
+
+        public async Task<LoginResponsDto> LoginAsync(LoginDto login)
+        {
+            ApplicationUser user = null;
+            if(login.UserName.Contains('@') && login.UserName.Contains(".com"))
+            {
+                user = await _userManager.FindByEmailAsync(login.UserName);
+            }
+            else
+            {
+                user = await _userManager.FindByEmailAsync(login.UserName);
+            }
+            if(user != null)
+            {
+                var result = await _signinManager.PasswordSignInAsync(user, login.Password, login.RememberMe, false);
+                if (result.Succeeded)
+                {
+                    return new LoginResponsDto
+                    {
+                        Email = user.Email,
+                        FirstName = user.FirstName,
+                        Token = _tokenService.GenerateToken(user),
+                        IsSucceeded = true
+                    };
+
+                }
+               
+            }
+          
+            return new LoginResponsDto
+            {
+                IsSucceeded = false
+            };
+
         }
 
         public async Task<bool> AssignRoleToUserAsync(UserRoleDto roleDto)

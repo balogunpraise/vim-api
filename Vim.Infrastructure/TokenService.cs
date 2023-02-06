@@ -7,11 +7,12 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Vim.Core.Application.Interfaces;
 using Vim.Core.Entities;
 
 namespace Vim.Infrastructure
 {
-    public class TokenService
+    public class TokenService : ITokenService
     {
         private readonly IConfiguration _config;
         private readonly SymmetricSecurityKey _key;
