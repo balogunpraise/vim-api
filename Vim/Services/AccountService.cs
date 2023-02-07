@@ -91,6 +91,24 @@ namespace Vim.Services
 
         }
 
+        public async Task<UserResponseDto> CurrentUser(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            UserResponseDto result = null;
+            if(user != null)
+            {
+                result = new UserResponseDto
+                {
+                    FirstName = user.FirstName,
+                    LastName  = user.LastName,
+                    Email = user.Email,
+                    IsInsructor = user.IsInstructor,
+                    IsStudent = user.IsStudent,
+                    IsSubscribed = user.IsSubscribed
+                };
+            }
+            return result;
+        }
         public async Task Logout()
         {
             await _signinManager.SignOutAsync();
