@@ -42,18 +42,31 @@ namespace Vim.Services
             return roles;
         }
 
-        public async Task<bool> RegisterUserAsync(RegisterUserDto registerUser)
+        public async Task<LoginResponsDto> RegisterUserAsync(RegisterUserDto registerUser)
         {
             bool isCreated = false;
-            var register = new ApplicationUser() 
+            LoginResponsDto user = null;
+            var register = new ApplicationUser()
             {
                 FirstName = registerUser.FirstName,
                 LastName = registerUser.LastName,
                 Email = registerUser.Email,
                 UserName = registerUser.Username,
+                IsStudent = true,
+                IsInstructor = false
             };
             var result = await _userManager.CreateAsync(register, registerUser.Password);
-            return result.Succeeded || isCreated;
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(register, "Student");
+                user = await LoginAsync(new LoginDto
+                {
+                    UserName = registerUser.Username,
+                    Password = registerUser.Password,
+                    RememberMe = false
+                });
+            }
+            return user;
         }
 
         public async Task<LoginResponsDto> LoginAsync(LoginDto login)

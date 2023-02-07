@@ -13,3 +13,5 @@ C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\obj\Debug\
 C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\obj\Debug\net6.0\refint\Vim.Infrastructure.dll
 C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\obj\Debug\net6.0\Vim.Infrastructure.pdb
 C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\obj\Debug\net6.0\ref\Vim.Infrastructure.dll
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\bin\Debug\net6.0\Vim.Infrastructure.runtimeconfig.json
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Infrastructure\obj\Debug\net6.0\Vim.Infrastructure.genruntimeconfig.cache

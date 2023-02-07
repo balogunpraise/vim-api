@@ -10,3 +10,5 @@ C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\obj\Debug\net6.0\Vim
 C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\obj\Debug\net6.0\refint\Vim.Core.dll
 C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\obj\Debug\net6.0\Vim.Core.pdb
 C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\obj\Debug\net6.0\ref\Vim.Core.dll
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\bin\Debug\net6.0\Vim.Core.runtimeconfig.json
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim.Core\obj\Debug\net6.0\Vim.Core.genruntimeconfig.cache

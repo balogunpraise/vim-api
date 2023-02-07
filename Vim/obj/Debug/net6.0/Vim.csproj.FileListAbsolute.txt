@@ -53,3 +53,5 @@ C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim\bin\Debug\net6.0\Vim.Core
 C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim\bin\Debug\net6.0\Vim.Infrastructure.dll
 C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim\bin\Debug\net6.0\Vim.Core.pdb
 C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim\bin\Debug\net6.0\Vim.Infrastructure.pdb
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Bayshore\Desktop\virtualInstituteOfMusisc\Vim\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll

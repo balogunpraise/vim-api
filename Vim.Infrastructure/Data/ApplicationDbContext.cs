@@ -21,5 +21,7 @@ namespace Vim.Infrastructure.Data
             base.OnModelCreating(builder);
         }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Assignment> Assignments { get; set; }
+        public DbSet<Materials> Materials { get; set; }
     }
 }

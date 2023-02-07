@@ -26,6 +26,20 @@ namespace Vim.Controllers
             return response.IsSucceeded ? Ok(new ApiResponse<LoginResponsDto>(response, 200, "Succeede")) : Unauthorized(new ErrorResponse(401));
         }
 
+        public async Task<ActionResult> RegisterUserAsync(RegisterUserDto user)
+        {
+            LoginResponsDto response = null;
+            if (ModelState.IsValid)
+            {
+                response = await _accountService.RegisterUserAsync(user);
+            }
+            if(response != null)
+            {
+                return Ok(new ApiResponse<LoginResponsDto>(response, 200, "Succeeded"));
+            }
+            return BadRequest(new ErrorResponse(400));
+        }
+
         public async Task<ActionResult> GetLoggedInUser()
         {
             UserResponseDto user = null;
