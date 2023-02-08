@@ -35,5 +35,27 @@ namespace Vim.Infrastructure.Repositories
             return await _context.Materials.FirstOrDefaultAsync(x => x.Id == id);
         }
 
+        public async Task<bool> UpdateMaterial(string id, Materials material)
+        {
+            try
+            {
+                var result = await GetMaterialById(id);
+                if (result != null)
+                {
+                    result.PictureUrl = material.PictureUrl;
+                    result.MaterialName = material.MaterialName;
+                    result.Description = material.Description;
+                    result.Url = material.Url;
+                    result.UpdatedAt = DateTime.Now;
+                    await _context.SaveChangesAsync();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
     }
 }
