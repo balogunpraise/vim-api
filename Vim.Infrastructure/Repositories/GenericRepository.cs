@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using Vim.Core.Application.Interfaces;
@@ -23,19 +24,20 @@ namespace Vim.Infrastructure.Repositories
             _logget = logger;
         }
 
-        public Task<IEnumerable<T>> GetAllAsync()
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await dbSet.ToListAsync();
         }
 
-        public Task<T> GetById(string id)
+        public async Task<T> GetById(string id)
         {
-            throw new NotImplementedException();
+            return await dbSet.FindAsync(id);
         }
 
-        public Task<bool> AddAsync(T entity)
+        public async Task<bool> AddAsync(T entity)
         {
-            throw new NotImplementedException();
+            await dbSet.AddAsync(entity);
+            return true;
         }
 
         public Task<bool> Upsert(T entity)

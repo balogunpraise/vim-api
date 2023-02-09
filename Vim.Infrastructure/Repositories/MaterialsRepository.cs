@@ -1,80 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Vim.Core.Application.Interfaces;
 using Vim.Core.Entities;
 using Vim.Infrastructure.Data;
 
 namespace Vim.Infrastructure.Repositories
 {
-    public class MaterialsRepository : IMaterialsRepository
+    public class MaterialsRepository : GenericRepository<Materials>,  IMaterialsRepository
     {
-        private readonly ApplicationDbContext _context;
 
-        public MaterialsRepository(ApplicationDbContext context)
+        public MaterialsRepository(ApplicationDbContext context, ILogger logger) : base(context, logger)
         {
-            _context = context;
+            
         }
 
 
-        public async Task<bool> AddMaterial(List<Materials> materials)
-        {
-            try
-            {
-                await _context.Materials.AddRangeAsync(materials);
-                await _context.SaveChangesAsync();
-                return true;
-            }
-            catch(Exception e)
-            {
-                return false;
-            }
-           
-        }
-
-        public async Task<Materials> GetMaterialById(string id)
-        {
-            return await _context.Materials.FirstOrDefaultAsync(x => x.Id == id);
-        }
-
-        public async Task<bool> UpdateMaterial(string id, Materials material)
-        {
-            try
-            {
-                var result = await GetMaterialById(id);
-                if (result != null)
-                {
-                    result.PictureUrl = material.PictureUrl;
-                    result.MaterialName = material.MaterialName;
-                    result.Description = material.Description;
-                    result.Url = material.Url;
-                    result.UpdatedAt = DateTime.Now;
-                    await _context.SaveChangesAsync();
-                }
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-
-        }
-
-        public async Task<bool> DeleteMaterial(string id)
-        {
-            try
-            {
-                var mat = await _context.Materials.FindAsync(id);
-                _context.Materials.Remove(mat);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        public async Task<List<Materials>> GetMaterialsAsync()
-        {
-            return await _context.Materials.ToListAsync();
-        }
     }
 }
