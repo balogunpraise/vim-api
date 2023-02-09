@@ -57,5 +57,19 @@ namespace Vim.Infrastructure.Repositories
             }
 
         }
+
+        public async Task<bool> DeleteMaterial(string id)
+        {
+            try
+            {
+                var mat = await _context.Materials.FindAsync(id);
+                _context.Materials.Remove(mat);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
