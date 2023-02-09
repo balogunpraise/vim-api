@@ -71,5 +71,10 @@ namespace Vim.Infrastructure.Repositories
                 return false;
             }
         }
+
+        public async Task<List<Materials>> GetMaterialsAsync()
+        {
+            return await _context.Materials.ToListAsync();
+        }
     }
 }
