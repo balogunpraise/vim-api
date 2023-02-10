@@ -20,7 +20,7 @@ namespace Vim.Infrastructure.Data
         public IStudentRepository Students { get; private set; }
 
 
-        public UnitOfWork(ApplicationDbContext context, ILogger logger)
+        public UnitOfWork(ApplicationDbContext context, ILogger<UnitOfWork> logger)
         {
             _context = context;
             _logger = logger;

@@ -12,9 +12,9 @@ using Vim.Services;
 
 namespace Vim.ServiceExtensions
 {
-    public static class IdentityService
+    public static class ServiceContainer
     {
-        public static IServiceCollection AddIdentityService(this IServiceCollection service, IConfiguration config)
+        public static IServiceCollection AddServices(this IServiceCollection service, IConfiguration config)
         {
             var builder = service.AddIdentity<ApplicationUser, IdentityRole>();
             builder.AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
@@ -34,7 +34,7 @@ namespace Vim.ServiceExtensions
 
             service.AddScoped<ITokenService, TokenService>();
             service.AddScoped<AccountService>();
-            service.AddScoped<IUnitOfWork, UnitOfWork>();
+            service.AddScoped<MaterialService>();
             return service;
         }
     }

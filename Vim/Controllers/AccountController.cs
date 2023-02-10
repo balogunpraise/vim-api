@@ -26,6 +26,7 @@ namespace Vim.Controllers
             return response.IsSucceeded ? Ok(new ApiResponse<LoginResponsDto>(response, 200, "Succeede")) : Unauthorized(new ErrorResponse(401));
         }
 
+        [HttpPost("register")]
         public async Task<ActionResult> RegisterUserAsync(RegisterUserDto user)
         {
             LoginResponsDto response = null;
@@ -40,6 +41,7 @@ namespace Vim.Controllers
             return BadRequest(new ErrorResponse(400));
         }
 
+        [HttpGet("loggedinuser")]
         public async Task<ActionResult> GetLoggedInUser()
         {
             UserResponseDto user = null;
@@ -53,6 +55,7 @@ namespace Vim.Controllers
             return BadRequest(400);
         }
 
+        [HttpPost("logout")]
         public async Task<ActionResult> LogOut()
         {
             await _accountService.Logout();

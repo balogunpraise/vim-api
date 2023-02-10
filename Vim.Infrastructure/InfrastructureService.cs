@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Vim.Core.Application.IConfigurations;
 using Vim.Infrastructure.Data;
 
 namespace Vim.Infrastructure
@@ -13,6 +14,7 @@ namespace Vim.Infrastructure
             service.AddDbContext<ApplicationDbContext>(option =>
             option.UseMySql(connectionString, serverVersion: ServerVersion.AutoDetect(connectionString)));
             service.AddTransient<TokenService>();
+            service.AddScoped<IUnitOfWork, UnitOfWork>();
             return service;
         }
 

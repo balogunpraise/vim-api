@@ -11,7 +11,7 @@ namespace Vim.Infrastructure.Repositories
         internal DbSet<T> dbSet;
 
         protected readonly ILogger _logger;
-
+    
         public GenericRepository(ApplicationDbContext context, ILogger logger)
         {
             _context = context;
