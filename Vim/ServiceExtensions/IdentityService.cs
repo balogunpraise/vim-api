@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Vim.Core.Application.IConfigurations;
 using Vim.Core.Application.Interfaces;
 using Vim.Core.Entities;
 using Vim.Infrastructure;
@@ -31,11 +32,9 @@ namespace Vim.ServiceExtensions
                     };
                 });
 
-            service.AddScoped<IMaterialsRepository, MaterialsRepository>();
-            service.AddScoped<IStaffRepository, StaffRepository>();
-            service.AddScoped<IStudentRepository, StudentRepository>();
             service.AddScoped<ITokenService, TokenService>();
             service.AddScoped<AccountService>();
+            service.AddScoped<IUnitOfWork, UnitOfWork>();
             return service;
         }
     }

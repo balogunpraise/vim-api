@@ -5,7 +5,7 @@ using Vim.Infrastructure.Data;
 
 namespace Vim.Infrastructure.Repositories
 {
-    public class GenericRepository<T> : IGenericRepository<T>, IDisposable where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         protected ApplicationDbContext _context;
         internal DbSet<T> dbSet;
@@ -16,6 +16,7 @@ namespace Vim.Infrastructure.Repositories
         {
             _context = context;
             _logger = logger;
+            dbSet = context.Set<T>();
         }
 
         public virtual async Task<IEnumerable<T>> GetAllAsync()
@@ -44,9 +45,5 @@ namespace Vim.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
