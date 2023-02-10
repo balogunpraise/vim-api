@@ -10,36 +10,36 @@ namespace Vim.Infrastructure.Repositories
         protected ApplicationDbContext _context;
         internal DbSet<T> dbSet;
 
-        protected readonly ILogger _logget;
+        protected readonly ILogger _logger;
 
         public GenericRepository(ApplicationDbContext context, ILogger logger)
         {
             _context = context;
-            _logget = logger;
+            _logger = logger;
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
             return await dbSet.ToListAsync();
         }
 
-        public async Task<T> GetById(string id)
+        public virtual async Task<T> GetById(string id)
         {
             return await dbSet.FindAsync(id);
         }
 
-        public async Task<bool> AddAsync(T entity)
+        public virtual async Task<bool> AddAsync(T entity)
         {
             await dbSet.AddAsync(entity);
             return true;
         }
 
-        public Task<bool> Upsert(T entity)
+        public virtual Task<bool> Upsert(T entity)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> Delete(string id)
+        public virtual Task<bool> Delete(string id)
         {
             throw new NotImplementedException();
         }
