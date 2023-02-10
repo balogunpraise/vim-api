@@ -32,5 +32,20 @@ namespace Vim.Controllers
             }
             return BadRequest(new ErrorResponse(400));
         }
+
+        [HttpDelete]
+        public async Task<ActionResult> DeleteMaterial(string id)
+        {
+            var isDeleted = await _materialService.DeleteMaterial(id);
+            if (isDeleted)
+            {
+                return Ok(new ApiResponse<bool>(isDeleted, 200, "Deleted Successfully"));
+            }
+            else
+            {
+                return BadRequest(new ErrorResponse(400));
+            }
+           
+        }
     }
 }

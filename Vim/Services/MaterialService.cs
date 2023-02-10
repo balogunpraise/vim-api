@@ -30,5 +30,12 @@ namespace Vim.Services
             return result;
         }
 
+        public async Task<bool> DeleteMaterial(string id)
+        {
+            var result = await _unitOfWork.Materials.Delete(id);
+            await _unitOfWork.CompleteAsync();
+            return result;
+        }
+
     }
 }
